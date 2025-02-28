@@ -1,0 +1,52 @@
+/* Updated CSS with RGB effects */
+:root {
+    --rgb-1: 106, 90, 205;    /* SlateBlue */
+    --rgb-2: 255, 105, 180;   /* HotPink */
+    --rgb-3: 0, 255, 255;     /* Cyan */
+}
+
+.main {
+    background: linear-gradient(
+        135deg,
+        rgba(var(--rgb-1), 0.1) 0%,
+        rgba(var(--rgb-2), 0.1) 50%,
+        rgba(var(--rgb-3), 0.1) 100%
+    );
+}
+
+.rgb-header {
+    animation: rgb-border 3s linear infinite;
+    background: linear-gradient(
+        90deg,
+        rgba(var(--rgb-1), 1) 0%,
+        rgba(var(--rgb-2), 1) 50%,
+        rgba(var(--rgb-3), 1) 100%
+    );
+    background-size: 200% auto;
+    color: rgb(32, 21, 21);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+@keyframes rgb-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.rgb-glow {
+    box-shadow: 0 0 15px rgba(var(--rgb-1), 0.3),
+                0 0 25px rgba(var(--rgb-2), 0.3),
+                0 0 35px rgba(var(--rgb-3), 0.3);
+}
+
+/* Add to existing .convert-btn styles */
+.convert-btn {
+    animation: btn-glow 2s infinite alternate;
+}
+
+@keyframes btn-glow {
+    from { box-shadow: 0 0 5px rgba(var(--rgb-1), 0.5); }
+    to { box-shadow: 0 0 20px rgba(var(--rgb-3), 0.8); }
+}
